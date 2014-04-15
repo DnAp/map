@@ -1,0 +1,1 @@
+gpsInfo.updatePosition({position:{latitude:55.700861666667,longitude:37.425493333333,altitude:162.7},velocity:{groundSpeed:0.35188,heading:98.49},utc:"105333.000"});

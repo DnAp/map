@@ -1,0 +1,3 @@
+/dev/cu.BT-GPS-36844F-BT-GPSCOM;	GPS port
+pythonOn:1;	When start GPS2Web: 0 - Do not start Python, 1 - Start Python
+pythonOff:1;	When stop GPS2Web:  0 - Do not stop Python, 1 - Stop Python

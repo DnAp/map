@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="SerialPort X">
+	<suite name="SerialPort X" code="SPA_" description="Applescript commands to access a standard (RS 232, internal modem) serial port">
+		<command name="serialport list" code="SPA_lSPA" description="List available serial ports.">
+			<result>
+				<type type="text" list="yes"/>
+			</result>
+		</command>
+		<command name="serialport open" code="SPA_oSPA" description="Open a serial port with settings.">
+			<direct-parameter description=" Port to open. See List command. " type="text"/>
+			<parameter name="bps rate" code="SPbr" description=" Rate (bits per second) for connection (defaults to 9600)." type="integer" optional="yes"/>
+			<parameter name="data bits" code="SPdb" description=" Number of data bits for connection: 5, 6, 7 or 8 (defaults to 8)." type="integer" optional="yes"/>
+			<parameter name="parity" code="SPpa" description=" Type of parity for connection: 0 = none, 1 = odd, 2 = even (defaults to 0)." type="integer" optional="yes"/>
+			<parameter name="stop bits" code="SPsb" description=" Number of stop bits for connection: 1 or 2 (defaults to 1)." type="integer" optional="yes"/>
+			<parameter name="handshake" code="SPhs" description=" Handshake for connection: 0 = none, 1 = XON/XOff, 2 = CTS/RTS, 3 = DTR/DSR, 4 = CTS &amp; DTR (defaults to 0)." type="integer" optional="yes"/>
+			<result description="A reference to the opened serial port.  Use with read/write/available/close commands." type="integer"/>
+		</command>
+		<command name="serialport close" code="SPA_cSPA" description="Close a previously opened serial port.">
+			<direct-parameter description="Port reference from Open command." type="integer"/>
+		</command>
+		<command name="serialport bytes available" code="SPA_aSPA" description="Number of bytes available for reading from the open serial port.">
+			<direct-parameter description="Port reference from Open command." type="integer"/>
+			<result type="integer"/>
+		</command>
+		<command name="serialport read" code="SPA_rSPA" description="Read data from the open serial port.">
+			<direct-parameter description="Port reference from Open command." type="integer"/>
+			<parameter name="for" code="SPrf" description="Number of bytes to read.  If not specified, return as many as possible." type="integer" optional="yes"/>
+			<result description="Data read from open serial port (maximum size is 65535 bytes)." type="text"/>
+		</command>
+		<command name="serialport write" code="SPA_wSPA" description="Write data to the open serial port.">
+			<direct-parameter description="Data to write to open serial port (cannot exceed 65535 bytes)." type="text"/>
+			<parameter name="to" code="SPpt" description="Port reference from Open command." type="integer"/>
+			<parameter name="for" code="SPwf" description=" Number of bytes to write.  String being written must be at least this long. Defauls to size of data." type="integer" optional="yes"/>
+		</command>
+	</suite>
+</dictionary>

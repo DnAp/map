@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>SerialPort X</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>osax</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.0.1</string>
+	<key>CFBundleSignature</key>
+	<string>spsa</string>
+	<key>CFBundleVersion</key>
+	<string>2.0</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>OSAScriptingDefinition</key>
+	<string>SerialPort X.sdef</string>
+	<key>OSAXHandlers</key>
+	<dict>
+		<key>Events</key>
+		<dict>
+			<key>SPA_aSPA</key>
+			<string>AEVTSPA_aSPA</string>
+			<key>SPA_cSPA</key>
+			<string>AEVTSPA_cSPA</string>
+			<key>SPA_lSPA</key>
+			<string>AEVTSPA_lSPA</string>
+			<key>SPA_oSPA</key>
+			<string>AEVTSPA_oSPA</string>
+			<key>SPA_rSPA</key>
+			<string>AEVTSPA_rSPA</string>
+			<key>SPA_wSPA</key>
+			<string>AEVTSPA_wSPA</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

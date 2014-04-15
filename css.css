@@ -1,0 +1,131 @@
+body{
+	padding:0;
+	margin:0;
+	background-color:#000;
+}
+#info{
+	background-color:#fff;
+}
+.YMaps-traffic-addtext-i{
+	display:none;
+}
+.ya{
+    color:#F00;
+    
+}
+.go1{
+    color:#174cf2;
+    
+}
+.go2{
+    color:#ef4a2c;
+    
+}
+.go3{
+    color:#ffb816;
+    
+}
+.go4{
+    color:#08ab21;
+    
+}
+
+ /* Внешний вид оверлея (начало) */
+.overlay {
+	position: absolute;
+	z-index: 99999999999;
+	width: 15px;
+	height: 15px;
+	background: url(images/arrow.gif);
+	cursor:pointer;
+}
+
+/* Кнопки 47px в место 27px */
+.YMaps-button, .YMaps-button-m, .YMaps-button .YMaps-button-c {
+    height: 47px;
+}
+
+.YMaps-button .YMaps-button-m i,.YMaps-button .YMaps-button-c i{
+    height:376;
+	background:url(images/toolbar-button-47.png) repeat-x
+}
+.YMaps-button .YMaps-button-m i{
+    top:-141px;
+}
+.YMaps-button_active .YMaps-button-l i,.YMaps-button_active .YMaps-button-r i{
+    top:-47px!important
+}
+.YMaps-button_hover .YMaps-button-l i,.YMaps-button_hover .YMaps-button-r i{
+    top:-94px
+}
+.YMaps-button_hover .YMaps-button-m i{
+    top:-235px
+}
+
+.YMaps-button_active .YMaps-button-m i{
+    top:-188px!important
+}
+.YMaps-button_active .YMaps-button-l i,.YMaps-button_active .YMaps-button-r i{
+    top:-47px!important
+}
+
+.YMaps-button .YMaps-icon{
+    margin:13px 1px 0 1px;
+}
+
+.SpeedCam{
+	width:18px;
+	height:26px;
+}
+.SpeedCam.type1{
+	position: absolute;
+	background:url(images/poi/1.png) no-repeat;
+}
+.SpeedCam.type3{
+	position: absolute;
+	background:url(images/poi/3.png) no-repeat;
+}
+.SpeedCam.type5{
+	position: absolute;
+	background:url(images/poi/5.png) no-repeat;
+}
+.SpeedCam.type20{
+	position: absolute;
+	background:url(images/poi/20.png) no-repeat;
+}
+.SpeedCam.type21{
+	position: absolute;
+	background:url(images/poi/21.png) no-repeat;
+}
+.SpeedCam.type22{
+	position: absolute;
+	background:url(images/poi/22.png) no-repeat;
+}
+.SpeedCam.type100{
+	position: absolute;
+	background:url(images/poi/100.png) no-repeat;
+}
+.SpeedCam.type101{
+	position: absolute;
+	background:url(images/poi/101.png) no-repeat;
+}
+.SpeedCam.type102{
+	position: absolute;
+	background:url(images/poi/102.png) no-repeat;
+}
+.SpeedCam.type103{
+	position: absolute;
+	background:url(images/poi/103.png) no-repeat;
+}
+.SpeedCam.type104{
+	position: absolute;
+	background:url(images/poi/104.png) no-repeat;
+}
+.SpeedCam.type105{
+	position: absolute;
+	background:url(images/poi/105.png) no-repeat;
+}
+.SpeedCam.type106{
+	position: absolute;
+	background:url(images/poi/106.png) no-repeat;
+}
