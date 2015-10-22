@@ -481,10 +481,30 @@ function standartLoad(selector)
 	map.addControl(toolbar, new YMaps.ControlPosition(YMaps.ControlPosition.TOP_LEFT, new YMaps.Point(5, 120)));
 	
 	// GPS 
-	if (typeof(GpsGate) != 'undefined' && typeof(GpsGate.Client) != 'undefined')
+	if (typeof(navigator.geolocation.getCurrentPosition) == 'function')
 	{
-		GpsGate.Client.getGpsInfo(gpsGateCallback);
-		carInterval = setInterval(function(){GpsGate.Client.getGpsInfo(gpsGateCallback);} , 800);
+		var gpsUpdate = function(){
+			var geoSuccess = function(position) {
+				var gpsPos = {position:{
+					latitude:position.coords.latitude ,longitude:position.coords.longitude,altitude: position.coords.altitude},
+					velocity:{ groundSpeed:0, heading: position.coords.speed },
+					utc: position.timestamp 
+				};
+				gpsGateCallback(gpsPos);
+			};
+			var geoError = function(error) {
+				console.log('Error occurred. Error code: ' + error.code);
+				// error.code can be:
+				//   0: unknown error
+				//   1: permission denied
+				//   2: position unavailable (error response from location provider)
+				//   3: timed out
+			};
+			navigator.geolocation.getCurrentPosition(geoSuccess, geoError, {enableHighAccuracy: true});
+		}
+
+		gpsUpdate();
+		carInterval = setInterval(gpsUpdate , 800);
 		MoveToGps = true;
 		var toolbar = new YMaps.ToolBar([]);
 		var button = new YMaps.ToolBarButton({
@@ -497,7 +517,7 @@ function standartLoad(selector)
 			
 			if(GPSCar) {
 				clearInterval(carInterval);
-				carInterval = setInterval(function(){GpsGate.Client.getGpsInfo(gpsGateCallback);} , 800);
+				carInterval = setInterval(gpsUpdate , 800);
 				map.setCenter(GPSCar.geoPoint);
 			}
 		});
